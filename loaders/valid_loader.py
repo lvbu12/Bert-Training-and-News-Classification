@@ -2,7 +2,7 @@
 import torch
 from torch.utils.data import Dataset, DataLoader
 import torch.nn.functional as F
-from ../utils import get_chars, get_labels, flatten
+from utils import get_chars, get_labels, flatten
 import random
 import collections
 
@@ -97,7 +97,7 @@ def collate_fn(data):
 if __name__ == "__main__":
 
     char2idx, idx2char = get_chars('../corpus/chars.lst')
-    data = ValidData('../data/valid.txt', char2idx)
+    data = ValidData('../data/demo_valid.txt', char2idx)
 #    words_idx, sent_idx, mask_index, mask_label_idx, label_idx = data[0]
 #    print(words_idx)
 #    print(sent_idx)
