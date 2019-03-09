@@ -8,30 +8,6 @@ from multihead_attention import MultiheadAttention
 import math
 
 
-class SentSimilarity_Model(nn.Module):
-
-    def __init__(self, args, bert_net):
-        super().__init__()
-
-        self.name = "SentSimilarityNet"
-        self.encoder = bert_net.encoder
-        #for p in self.encoder.parameters():
-        #    p.requires_grad = False
-
-        self.sent_simi_fn = Linear(args.embed_dim, args.sent_simi_output_size)
-
-    def forward(self, src_tokens, src_lengths, sent_idx):
-
-        encoder_out_dict = self.encoder(src_tokens, src_lengths, sent_idx)
-        encoder_out = encoder_out_dict['encoder_out'].transpose(0, 1)
-
-        sent_simi_cls_out = encoder_out[:, 0]
-
-        sent_simi_cls_out = self.sent_simi_fn(sent_simi_cls_out)
-
-        return sent_simi_cls_out
-
-
 class Para_cls_model(nn.Module):
 
     def __init__(self, args, bert_net):

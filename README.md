@@ -9,6 +9,7 @@ Pretraining BERT and apply it to news text classification.
 * run `python gen_bert_index_data.py chars_vocab_path raw_text_data index_num_data`.  For example, `python gen_bert_index_data.py corpus/chars.lst data/train.txt idx_data/train.txt`.
 
 ### Train Model
+* change the train data path or valid data path or other settings in *Configs/bert.json*, or use the default settings.
 * run `python bert_train.py`(use default bert configuration json file path *Configs/bert.json*) or `python bert_train.py bert_config_json_file_path`
 
 ### Test Model
