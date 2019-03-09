@@ -19,11 +19,11 @@ Pretraining BERT and apply it to character level chinese news text classificatio
 ## Chinese News Classification
 ### Train Model
 * change the train data path or valid data path or other settings in *Configs/para_cls.json*, or use the default settings.
-* run `python Chinese_news_cls_train.py`(use default configuration json file path *Configs/para_cls.json*) or `python bert_train.py custom_config_json_file_path`
+* run `python Chinese_news_cls_train.py`(use default configuration json file path *Configs/para_cls.json*) or `python Chinese_news_cls_train.py custom_config_json_file_path`
 
 ### Test Model
 * change the test data path or other settings in *Configs/para_cls.json*, or use the default settings.
-* run `python Chinese_news_cls_test.py`(use default configuration json file path *Configs/para_cls.json*) or `python bert_train.py custom_config_json_file_path`
+* run `python Chinese_news_cls_test.py`(use default configuration json file path *Configs/para_cls.json*) or `python Chinese_news_cls_test.py custom_config_json_file_path`
 
 ### Report F1 Score
 * Run function `gen_csv_report` in report.py to get the report csv which contains the confusion matrix.
