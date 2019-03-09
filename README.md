@@ -6,9 +6,11 @@ Pretraining BERT and apply it to news text classification.
 论文地址：[BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
 
 ### Generate Data
-* run `python gen_bert_index_data.py chars_vocab_path raw_text_data index_num_data`, for example, `python gen_bert_index_data.py corpus/chars.lst data/train.txt idx_data/train.txt`.
+* run `python gen_bert_index_data.py chars_vocab_path raw_text_data index_num_data`.  For example, `python gen_bert_index_data.py corpus/chars.lst data/train.txt idx_data/train.txt`.
 
 ### Train Model
 * run `python bert_train.py`(use default bert configuration json file path *Configs/bert.json*) or `python bert_train.py bert_config_json_file_path`
 
-
+### Test Model
+* change the test data path or prediction output path in *Configs/bert.json*, or use the default settings.
+* run `python bert_test.py`, compare the mask prediction and is_next_sent label with raw text stored in data directory, and compute the accuray of prediction.
