@@ -6,10 +6,10 @@ from torch.optim import lr_scheduler
 from torch.utils.data import DataLoader
 
 from utils import time_since, show_model_size, get_chars
-from idx_loaders.idx_train_loader import TrainData, collate_fn
-from idx_loaders.idx_valid_loader import ValidData
+from loaders.idx_train_loader import TrainData, collate_fn
+from loaders.idx_valid_loader import ValidData
 from config import Config
-from models.model import Bert
+from modules.model import Bert
 from mask_cross_entropy_loss import mask_cross_entropy_loss
 import argparse
 import os
