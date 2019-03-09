@@ -1,5 +1,5 @@
 # Bert-Training-and-News-Classification
-Pretraining BERT and apply it to news text classification.  
+Pretraining BERT and apply it to character level chinese news text classification.  
 实验使用Facebook实现的一个Transformer中的Encoder来完成Bert模型，链接：[fairseq](https://github.com/pytorch/fairseq)。
 
 ## Bert Training
@@ -15,3 +15,8 @@ Pretraining BERT and apply it to news text classification.
 ### Test Model
 * change the test data path or prediction output path in *Configs/bert.json*, or use the default settings.
 * run `python bert_test.py`, compare the mask prediction and is_next_sent label with raw text stored in data directory, and compute the accuray of prediction.
+
+## Chinese News Classification
+### Train Model
+* change the train data path or valid data path or other settings in *Configs/para_cls.json*, or use the default settings.
+* run `python chinese_news_cls_train.py`(use default configuration json file path *Configs/para_cls.json*) or `python bert_train.py custom_config_json_file_path`
