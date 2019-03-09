@@ -72,8 +72,12 @@ class Dataset(object):
 
 if __name__ == "__main__":
 
-    char2idx, idx2char = get_chars('corpus/chars.lst')
-    data = Dataset(sys.argv[1], char2idx)
-    data.gen_bert_data(sys.argv[2])
+    if len(sys.argv) != 4:
+        print('Using: python %s chars_vocab_path raw_text_path output_idx_data_path')
+        sys.exit(1)
+
+    char2idx, idx2char = get_chars(sys.argv[1])
+    data = Dataset(sys.argv[2], char2idx)
+    data.gen_bert_data(sys.argv[3])
     #print(data._gen_item(0))
     pass
