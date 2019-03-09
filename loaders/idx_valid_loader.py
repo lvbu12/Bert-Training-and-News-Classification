@@ -64,7 +64,7 @@ def collate_fn(data):
 
 if __name__ == "__main__":
 
-    data = ValidData('../idx_data/train.txt')
+    data = ValidData('../idx_data/demo_valid.txt')
 #    words_idx, sent_idx, mask_index, mask_label_idx, label_idx = data[0]
 #    print(words_idx)
 #    print(sent_idx)
